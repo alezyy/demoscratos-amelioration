@@ -1,0 +1,20 @@
+Créer des adresses geth account new --datadir ~/.ethereum_private
+
+Configurer le fichier genesis.json et mettre les adresse créées dans la partie alloc. Cela permet de donner des fonds à ces adresses à des fins de tests.
+Initialiser le bloc génesis geth init --datadir ~/.ethereum_private ./contract/genesis.json
+Lancer la console:  sudo geth --cache 512 --ipcpath ~/Library/Ethereum/geth.ipc --networkid 101 --rpc --rpcapi "web3,net,personal,eth" --rpccorsdomain "*" --datadir ~/.ethereum_private console
+A partir de la console lancer le mineur miner.start()
+
+
+to remove DB
+geth --cache=1024
+sudo geth removedb
+
+sudo rm -rf /Users/francener/Library/Ethereum/geth/chaindata
+sudo rm -rf /Users/francener/Library/Ethereum/geth/lightchaindata
+
+geth account list --help
+geth account list --keystore /Users/francener/Library/Ethereum
+
+
+personal.unlockAccount("0x1d1adb3a28a0b6df8e8ca9838a5e98800be4e0da", "Net463877", 0)
